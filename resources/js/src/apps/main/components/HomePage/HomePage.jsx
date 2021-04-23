@@ -6,15 +6,15 @@ import './HomePage.css';
 const HomePage = () => {
 	const handleSubmit = r => console.log(r);
 	const previewNoticeList = [
-		
+
 	];
 	const previewHeader = '';
 	const emptyCheckSubmissionWarningText = '';
 	const emptyCheckAnnotationItemWarningText = 'Step 2: Please track the cell bound by this layout';
 	const emptyAnnotationReminderText = 'Step 1: Click the button above to add a new layout around a cell';
 
-	const videoSrc = "https://cildata.crbs.ucsd.edu/media/videos/15793/15793_web.mp4";
-	// const videoSrc = "/uploads/test.mp4";
+    // const videoSrc = "https://cildata.crbs.ucsd.edu/media/videos/15793/15793_web.mp4";
+	const videoSrc = "/storage/video1.mp4";
 
 	return (
 		<div>
