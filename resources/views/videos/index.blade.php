@@ -19,11 +19,9 @@
                             </ul>
                             
                     </div>
-                </div>
-                <div id="video-wrap">
-            
-                </div>
+                </div>                
             </div>
+            <div class="mt-3" id="video-wrap"></div>
         </div>
     </div>
 @endsection
