@@ -17,9 +17,11 @@
                                     <li><a href="/videos/{{$video->id}}">{{$video->name}}</a></li>
                                 @endforeach
                             </ul>
+                            
                     </div>
-                </div>
+                </div>                
             </div>
+            <div class="mt-3" id="video-wrap"></div>
         </div>
     </div>
 @endsection
