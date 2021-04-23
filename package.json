@@ -10,18 +10,42 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@babel/cli": "^7.13.16",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/preset-env": "^7.13.15",
         "@babel/preset-react": "^7.0.0",
         "axios": "^0.21",
-        "bootstrap": "^4.0.0",
+        "dotenv": "^8.2.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
         "postcss": "^8.1.14",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-hot-loader": "^4.13.0",
+        "react-icons": "^3.11.0",
+        "react-player": "^1.15.3",
+        "reactstrap": "^6.5.0",
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
+    },
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "i18next": "^16.0.0",
+        "i18next-browser-languagedetector": "^3.0.1",
+        "konva": "^2.5.1",
+        "normalizr": "^3.4.0",
+        "prop-types": "^15.7.2",
+        "react-color": "^2.19.3",
+        "react-i18next": "^10.11.1",
+        "react-konva": "^16.8.6",
+        "react-scroll": "^1.7.12",
+        "react-spinners": "^0.10.6"
+    },
+    "peerDependencies": {
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
     }
 }
