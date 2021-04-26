@@ -20,6 +20,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script>
+        window.server_url = "{{ env('SERVER_URL') }}";
+    </script>
 </head>
 <body>
     <div id="app">
