@@ -11,9 +11,10 @@ if (document.getElementById('video-wrap')) {
 	];
 
 	ReactDOM.render(
-		<HomePage 
-			videoSrc={video_src} 
-			apiURL={`${window.server_url}/${video_id}/annotations`}		
+		<HomePage
+			videoSrc={video_src}
+			//apiURL={`${window.server_url}/api/v1/videos/${video_id}/annotations`}
+			apiURL={`https://dev.prosports.zone/api/v1/videos/${video_id}/annotations`}
 		/>,
 		document.getElementById('video-wrap'),
 	);
