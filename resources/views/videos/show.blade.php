@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div id="video-wrap" :name="{{$video->name}}" :src="/storage/{{$video->filename}}" :id="{{$video->id}}"></div>
+{{--            id is for the API-Path: const API = "https://dev.prosports.zone/api/v1/videos/{$hashid}/annotations";--}}
+            <div id="video-wrap" :src="/storage/{{$video->filename}}" :id="{{$video->hashid()}}"></div>
         </div>
     </div>
 @endsection
