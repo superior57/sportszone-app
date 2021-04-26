@@ -20,7 +20,7 @@
         </div>
         <div class="row">
 
-            <div class="mt-3" id="video-wrap"></div>
+            {{-- <div class="mt-3" id="video-wrap"></div> --}}
 
         </div>
 

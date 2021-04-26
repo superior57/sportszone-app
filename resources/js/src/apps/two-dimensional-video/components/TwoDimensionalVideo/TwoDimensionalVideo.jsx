@@ -24,9 +24,9 @@ import { shapeTypeList as shapeList, getShapeTypeKey } from "../../models/shape"
 import { Polygon } from '../../models/polygon';
 import { Vertex } from '../../models/vertex';
 
-const API = "https://dev.prosports.zone/api/v1/videos/73xK6JaeqV9MrGR2BlVO/annotations";
 
-const getAnnotationData = async () => {
+
+const getAnnotationData = async (API) => {
 	const fetchHeaders = {
 		method: "GET",
 		headers: {
@@ -41,7 +41,7 @@ const getAnnotationData = async () => {
 	}
 }
 
-const updateAnnotationData = async (data) => {
+const updateAnnotationData = async (API, data) => {
 	const fetchHeaders = {
 		method: "POST",
 		headers: {
@@ -151,10 +151,6 @@ class TwoDimensionalVideo extends Component {
 		this.initialState();
 	}
 
-	componentDidUpdate() {
-		// console.log("component did update", this.state);
-	}
-
 	initialState = async () => {
 		this.setState(prevState => {
 			return {
@@ -162,7 +158,7 @@ class TwoDimensionalVideo extends Component {
 			}
 		});
 		try {
-			const res = await getAnnotationData();
+			const res = await getAnnotationData(this.props.serverURL);
 			const data = JSON.parse(res.data);	
 			if(data) {
 				this.setState((prevState) => {		
@@ -861,33 +857,6 @@ class TwoDimensionalVideo extends Component {
 		})
 	}
 
-	// handleSubmit = () => {
-	// 	const { annotations, isSubmitted } = this.state;
-	// 	const { onSubmit, hasReview, emptyCheckSubmissionWarningText } = this.props;
-
-	// 	if (this.isEmptyAnnotationOrIncident()) {
-	// 		this.setState({ isDialogOpen: true, dialogTitle: 'Submission warning', dialogMessage: emptyCheckSubmissionWarningText });
-	// 		return;
-	// 	}
-	// 	if (!isSubmitted && hasReview) {
-	// 		this.setState({
-	// 			isLoop: true, isSubmitted: true, played: 0, isPlaying: true, focusing: '',
-	// 		});
-	// 		return;
-	// 	}
-	// 	const { videoWidth, annotationHeight, entities } = this.state;
-	// 	const { url } = this.props;
-	// 	const annotation = new schema.Entity('annotations');
-	// 	const denormalizedAnnotations = denormalize({ annotations }, { annotations: [annotation] }, entities).annotations;
-	// 	denormalizedAnnotations.forEach((ann) => {
-	// 		delete ann.isManipulatable;
-	// 	});
-	// 	const data = {
-	// 		url, videoWidth, annotationHeight, annotations: denormalizedAnnotations,
-	// 	};
-	// 	onSubmit(data);
-	// }
-
     handleDialogToggle = () => this.setState(prevState => ({ isDialogOpen: !prevState.isDialogOpen }));
 
 	handleAddClick = () => this.setState(prevState => ({ isAdding: !prevState.isAdding, isPlaying: false }));
@@ -981,7 +950,7 @@ class TwoDimensionalVideo extends Component {
 		data = JSON.stringify(data);
 		
 		try {
-			const res = await updateAnnotationData({
+			const res = await updateAnnotationData(this.props.serverURL, {
 				"video_id": 111,
 				"user_id": 1,
 				"data": data,

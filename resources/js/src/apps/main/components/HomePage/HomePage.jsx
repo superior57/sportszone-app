@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader';
 import { TwoDimensionalVideo } from '../../../../apps/index';
 import './HomePage.css';
 
-const HomePage = () => {
+const HomePage = (props) => {
 	const handleSubmit = r => console.log(r);
 	const previewNoticeList = [
 
@@ -13,20 +13,18 @@ const HomePage = () => {
 	const emptyCheckAnnotationItemWarningText = 'Step 2: Please track the cell bound by this layout';
 	const emptyAnnotationReminderText = 'Step 1: Click the button above to add a new layout around a cell';
 
-    // const videoSrc = "https://cildata.crbs.ucsd.edu/media/videos/15793/15793_web.mp4";
-	const videoSrc = "/storage/video1.mp4";
-
 	return (
 		<div>
 			<div className=''>
 				<TwoDimensionalVideo
 					onSubmit={ handleSubmit }
-					url={videoSrc}
+					url={props.videoSrc}
 					videoWidth={ 1000 }
 					hasReview
 					isEmptyCheckEnable
 					isSplitEnable
 					isShowHideEnable
+					serverURL={props.apiURL}
 					emptyCheckSubmissionWarningText={ emptyCheckSubmissionWarningText }
 					emptyCheckAnnotationItemWarningText={ emptyCheckAnnotationItemWarningText }
 					emptyAnnotationReminderText={ emptyAnnotationReminderText }
