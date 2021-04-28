@@ -33,7 +33,7 @@ const Screen = ({
 		loop={ isLoop }
 		playbackRate={ playbackRate }
 		width={ width }
-		height={ width * (9 / 16) }
+		height={ width * (9 / 16) }	
 	/>
 );
 

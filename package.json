@@ -42,7 +42,8 @@
         "react-i18next": "^10.11.1",
         "react-konva": "^16.8.6",
         "react-scroll": "^1.7.12",
-        "react-spinners": "^0.10.6"
+        "react-spinners": "^0.10.6",
+        "screenfull": "^5.1.0"
     },
     "peerDependencies": {
         "react": "^16.8.6",
