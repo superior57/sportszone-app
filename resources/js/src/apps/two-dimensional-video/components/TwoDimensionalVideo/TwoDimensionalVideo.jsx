@@ -682,6 +682,7 @@ class TwoDimensionalVideo extends Component {
 			cur_played = incidents[0].time;
 		}
 		this.setState({ focusing: name, shape: shapeType, played: cur_played });
+		this.player.seekTo(cur_played);
 	};
 
 	handleIncidentItemClick = (incident) => {
